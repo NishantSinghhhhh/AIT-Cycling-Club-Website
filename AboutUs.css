@@ -1,0 +1,449 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    /* font-family: 'Barlow', sans-serif; */
+    font-size: 10px;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+}
+
+header {
+    /* position: fixed; */
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: #c50606; */
+    background-color:#242424;
+    height: 15%;
+    padding-bottom: 2%;
+}
+
+header .nav-list {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+header .nav-list ul {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header .nav-list ul li {
+    list-style: none;
+	height: auto;
+	width: auto;
+}
+header .nav-list ul li a {
+    text-decoration: none;
+	font-size: 2rem;
+    color: white;
+	/* color: black; */
+	padding: 10px 25px;
+	display: inline-block;
+}
+header .nav-list .overlay {
+    position: absolute;
+	/* background-color: aquamarine; */
+	z-index: -1;
+	transition: .3s ease left, width, opacity;
+	opacity: 0;
+}
+header .nav-list .overlay.active {
+    opacity: 1;
+}
+
+
+.left1, .right1 {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.text1 {
+    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 100
+}
+
+.right1 ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.right1 ul li {
+    margin-right: 15px;
+    font-weight: 100
+}
+
+.right1 ul li:last-child {
+    margin-right: 0;
+}
+
+header .nav-list .overlay {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+    transition: .3s ease left, width, opacity;
+    opacity: 0;
+    border-radius: 8px;
+}
+
+header .nav-list .overlay.active {
+    opacity: 1;
+}
+
+.AboutUS__Top{
+    /* top: ; */
+    width: 100%;
+    display: flex;
+}
+.AboutUS__Top__Image{
+ width: 50%;
+}
+.AboutUS__Top__Image__img{
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
+    padding-top: 5%;
+    padding-right: 5%;
+}
+
+.AboutUS__Top__Heading{
+    width: 40%;
+    color: black;
+    padding-top: 5%;
+    font-size: 250%;
+}
+
+.AboutUS__Top__Heading h1{
+    color: black;
+    justify-content: center;
+    align-items: center;
+    font-size: 350%;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.AboutUS__Top__Heading h3{
+    color: #818181;
+    justify-content: center;
+    align-items: center;
+    font-size: 100%;
+    font-weight: 100;
+    margin-left: 30%;
+}
+
+.AboutUs__Icons{
+    margin-left: 10%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons{
+    height: 220%;
+    width: 220%;
+    font-size: 300%;
+}
+
+.icons h3{
+    font-weight: 100;
+    color: black;
+    width: 100%;
+    font-size: 20%;
+    padding-top: 5%;
+}
+
+.fa-user-tie{
+    width: 20%;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    padding: auto;
+    /* color: #e3051a; */
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
+}
+
+.fa-heart{
+    color: black;
+    width: 20%;
+    text-align: center;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    /* color: #e3051a; */
+    
+}
+
+.icon1{
+    color: black;
+    width: 20%;
+    text-align: center;
+    justify-content: center;
+    /* color: #e3051a; */
+    font-size: 300%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
+}
+
+.AboutUs__Card {
+    height: 60%;
+    width: 20%;
+    /* border: 1px solid black; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.AboutUs__Content{
+    margin-top: 5%;
+    height: 100%;
+    width: 100%;
+    background-color: #fcfcfc;
+    display: flex;
+    font-weight: 100;
+}
+
+.AboutUs__Alpha{
+    padding-left: 10%;
+    padding-right: 8%;
+}
+
+.AboutUs__Alpha h1{
+
+    color: black;
+    font-size: 450%;
+}
+
+.AboutUs__Alpha h3{
+    font-size: 180%;
+    padding-top: 1%;
+    font-weight: 100;
+}
+.AboutUs__Alpha :nth-child(3){
+    color: black;
+    font-size: 170%;
+    padding-top: 5%;
+    color: red;
+}
+.AboutUs__Alpha :nth-child(4){
+    color: black;
+    font-size: 170%;
+    padding-top: 3%;
+    /* color: red/; */
+}
+.AboutUs__Video img{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+.Play__Overlay{
+    position: absolute;
+    color: gray;
+    z-index: 10;
+    font-size: 100%;
+    /* border: 10px solid red; */
+}
+.fa-circle-play{
+    position: absolute;
+    color:#e3051a;
+    z-index: 10;
+    font-size: 800%;
+    margin: auto;
+    padding-top: 180px;
+}
+
+.Image__text{
+    color: white;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-left: 9%;
+    margin-top:25% ;
+    font-size: 220%;
+}
+
+.AboutUs__FunFacts {
+    height: 100%;
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 10%;
+}
+
+.AboutUs__FunFacts__Gallery{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* margin-bottom: 5%; */
+}
+.AboutUs__Cards{
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    margin-left:4% ;
+    margin-bottom: 5%;
+    /* border: 1px solid black; */
+}
+.AboutUs__Cards:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); 
+}
+
+.flex{
+    display: flex;
+}
+
+.AboutUS__Top__Heading p{
+    color: black;
+    padding-top: 15%;
+    font-size: 180%;
+}
+ 
+.AboutUs__FunFacts h1{
+    color: black;
+    font-size: 400%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2%;
+    margin-bottom: 5%;
+}
+.AboutUs__FunFacts__images img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    
+}
+.AboutUs__Cards h3,
+.AboutUs__Cards h4 {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+/* Add hover effect to h3 and h4 */
+.AboutUs__Cards h3:hover,
+.AboutUs__Cards h4:hover {
+    color: rgb(255, 0, 0); /* Change text color on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    /* Add any other hover effects you want */
+}
+
+footer {
+    width: 100%;
+    height: 15%;
+    background-color: #efefef;
+    margin-top: 5%;
+    padding-bottom: 3%;
+}
+footer .div4{
+    padding-top: 0.8%;
+    padding-left: 8%;
+    padding-bottom: 1%;
+    border-bottom: 1px solid #403f3f;
+    display: flex;
+    justify-content: space-between;
+}
+footer .left4{
+    display: flex;
+ 
+    height: inherit;
+    width: 20%;
+    /* background-color: black; */
+}
+footer .left4 .fa-person-biking{
+    color:#403f3f;
+    font-size: 230%;
+}
+footer .left4 .text6{ 
+    color:#403f3f;
+    padding-left: 2%;
+    font-size: 230%;
+    font-weight: bolder;
+}
+footer .middle1{
+    width: 50%;
+    text-decoration: none;
+    font-size: 180%;
+    display: flex;
+    display: flex;
+    justify-content: space-evenly;
+
+} 
+footer .middle1 a{
+    color:#403f3f ;
+   text-decoration: none;
+}
+footer .right4{
+    width: 30%;
+    display: flex;
+    /* flex-direction: ; */
+    justify-content: space-around;
+}
+footer .right4 .fa-brands {
+    color: #403f3f;
+    font-size: 200%;
+}
+
+footer .right4 .fa-facebook:hover {
+    color: #3b5998; /* Change color on hover for Facebook icon */
+    transition: color 0.3s ease; 
+}
+
+footer .right4 .fa-linkedin:hover {
+    color: #1da1f2; /* Change color on hover for Twitter icon */
+    transition: color 0.3s ease; 
+}
+
+footer .right4 .fa-instagram:hover {
+    transition: color 0.3s ease; 
+    color: #e4405f; /* Change color on hover for Instagram icon */
+}
+footer .right4 .fa-youtube:hover {
+    transition: color 0.3s ease; 
+    color: #e4405f; /* Change color on hover for Instagram icon */
+}
+
+/* Add hover effects for other icons as needed */
+.div5{
+    color: black;
+    font-size: 150%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 3%;
+
+}

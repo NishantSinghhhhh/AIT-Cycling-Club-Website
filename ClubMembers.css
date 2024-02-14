@@ -1,0 +1,396 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    /* font-family: 'Barlow', sans-serif; */
+    font-size: 10px;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+}
+
+header {
+    /* position: fixed; */
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: #c50606; */
+    background-color:#242424;
+    height: 15%;
+    padding-bottom: 2%;
+}
+
+header .nav-list {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+header .nav-list ul {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header .nav-list ul li {
+    list-style: none;
+	height: auto;
+	width: auto;
+}
+header .nav-list ul li a {
+    text-decoration: none;
+	font-size: 2rem;
+    color: white;
+	/* color: black; */
+	padding: 10px 25px;
+	display: inline-block;
+}
+header .nav-list .overlay {
+    position: absolute;
+	/* background-color: aquamarine; */
+	z-index: -1;
+	transition: .3s ease left, width, opacity;
+	opacity: 0;
+}
+header .nav-list .overlay.active {
+    opacity: 1;
+}
+
+
+.left1, .right1 {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.text1 {
+    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 100
+}
+
+.right1 ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.right1 ul li {
+    margin-right: 15px;
+    font-weight: 100
+}
+
+.right1 ul li:last-child {
+    margin-right: 0;
+}
+
+header .nav-list .overlay {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+    transition: .3s ease left, width, opacity;
+    opacity: 0;
+    border-radius: 8px;
+}
+
+header .nav-list .overlay.active {
+    opacity: 1;
+}
+
+
+.AboutUS__Top{
+    /* top: ; */
+    width: 100%;
+    display: flex;
+}
+.AboutUS__Top__Image{
+ width: 50%;
+}
+.AboutUS__Top__Image__img{
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
+    padding-top: 5%;
+}
+
+.AboutUS__Top__Heading{
+    width: 40%;
+    color: black;
+    padding-top: 5%;
+    font-size: 250%;
+}
+
+.AboutUS__Top__Heading h1{
+    color: black;
+    justify-content: center;
+    align-items: center;
+    font-size: 350%;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.AboutUS__Top__Heading h3{
+    color: #818181;
+    justify-content: center;
+    align-items: center;
+    font-size: 100%;
+    font-weight: 100;
+    margin-left: 30%;
+}
+
+.ClubMembers__Members{
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    /* margin-left/: 5%; */
+    padding-left: 5%;
+}
+
+.ClubMembers__Members h1{
+    color: black;
+    font-size: 550%;
+    display: flex;
+   font-weight: 900;
+   text-decoration: underline red;
+   padding-bottom: 2%;
+   padding-top: 3%;
+}
+
+.ClubMembers__Members__sexs{
+    display: flex;
+    /* margin-left: 5%; */
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* padding-left: 5%; */
+}
+
+.card {
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin-right: 5%;
+    margin-top: 5%;
+    transition: box-shadow 0.3s; /* Adding transition for smooth effect */
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5); /* Change shadow color to red on hover */
+}
+
+        .card img {
+            max-width: 100%;
+            /* border-bottom: 4px solid rgb(255, 0, 0); */
+        }
+        .card h2 {
+            padding-top: 2%;
+            margin: 10px 0;
+            color: black;
+        }
+        .card h4 {
+            padding-top: 4%;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 12px;
+            color: black;
+        }
+        .card h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px;
+            color: black;
+            font-size: 400%;
+        }
+        .Accounts {
+            margin-top: 4%;
+            display: flex;
+            padding: 10px 20px;
+            justify-content: space-evenly;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .Accounts:hover {
+            /* background-color: #ff0000; */
+            /* color: white; */
+        }
+
+        .fa-brands {
+            color: black;
+        }
+
+        .fa-brands {
+            color: black;
+        }
+        
+        .fa-brands:hover {
+
+            color: red;
+        }
+        
+.ClubMembers__Members__Joint__sexs{
+    display: grid;
+  grid-template-rows: auto auto; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10px; 
+}
+
+
+footer {
+    width: 100%;
+    height: 15%;
+    background-color: #efefef;
+    margin-top: 5%;
+    padding-bottom: 3%;
+}
+footer .div4{
+    padding-top: 0.8%;
+    padding-left: 8%;
+    padding-bottom: 1%;
+    border-bottom: 1px solid #403f3f;
+    display: flex;
+    justify-content: space-between;
+}
+footer .left4{
+    display: flex;
+ 
+    height: inherit;
+    width: 20%;
+    /* background-color: black; */
+}
+footer .left4 .fa-person-biking{
+    color:#403f3f;
+    font-size: 230%;
+}
+footer .left4 .text6{ 
+    color:#403f3f;
+    padding-left: 2%;
+    font-size: 230%;
+    font-weight: bolder;
+}
+footer .middle1{
+    width: 50%;
+    text-decoration: none;
+    font-size: 180%;
+    display: flex;
+    display: flex;
+    justify-content: space-evenly;
+
+} 
+footer .middle1 a{
+    color:#403f3f ;
+   text-decoration: none;
+}
+footer .right4{
+    width: 30%;
+    display: flex;
+    /* flex-direction: ; */
+    justify-content: space-around;
+}
+footer .right4 .fa-brands {
+    color: #403f3f;
+    font-size: 200%;
+}
+
+footer .right4 .fa-facebook:hover {
+    color: #3b5998; /* Change color on hover for Facebook icon */
+    transition: color 0.3s ease; 
+}
+
+footer .right4 .fa-linkedin:hover {
+    color: #1da1f2; /* Change color on hover for Twitter icon */
+    transition: color 0.3s ease; 
+}
+
+footer .right4 .fa-instagram:hover {
+    transition: color 0.3s ease; 
+    color: #e4405f; /* Change color on hover for Instagram icon */
+}
+footer .right4 .fa-youtube:hover {
+    transition: color 0.3s ease; 
+    color: #e4405f; /* Change color on hover for Instagram icon */
+}
+
+/* Add hover effects for other icons as needed */
+.div5{
+    color: black;
+    font-size: 150%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 3%;
+
+}
+
+.ClubMembers__Members__SE{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.card img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card h1, .card h2, .card h4 {
+    margin: 10px 0;
+}
+
+.Accounts {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.Accounts i {
+    margin: 0 5px;
+    font-size: 24px;
+    color: black;
+}
+
+.Accounts i:hover {
+    color: red;
+}
