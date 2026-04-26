@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <HeroSlider />
-      <div className="px-16 py-16">
+      <div className="">
         <AboutSection />
         <Credentials />
         <FeaturedTours />
