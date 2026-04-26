@@ -13,15 +13,6 @@ const tours = [
     tag: "Most Popular",
   },
   {
-    id: "02",
-    title: "Pune Outskirts",
-    subtitle: "Dawn Patrol · 30km",
-    description:
-      "Beat the city traffic and ride through misty morning highways as the sun breaks the horizon. A ritual for the serious rider.",
-    img: "/images/image8.jpg",
-    tag: "Beginner Friendly",
-  },
-  {
     id: "03",
     title: "Sahyadri Trails",
     subtitle: "Mountain · 60km",
@@ -46,6 +37,43 @@ export default function FeaturedTours() {
 
   return (
     <section className="w-full py-24 px-2 md:px-16 bg-white overflow-hidden">
+      <style>{`
+        @media (min-width: 1051px) {
+          .tour-mobile { display: none; }
+          .tour-desktop { display: flex; }
+        }
+        @media (max-width: 1050px) {
+          .tour-mobile { display: flex; }
+          .tour-desktop { display: none; }
+        }
+
+        .tour-expand-content {
+          display: grid;
+          grid-template-rows: 0fr;
+          transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .tour-expand-content.open {
+          grid-template-rows: 1fr;
+        }
+        .tour-expand-inner {
+          overflow: hidden;
+        }
+
+        .tour-mobile-header {
+          transition: background-color 0.3s ease;
+        }
+
+        .tour-img-wrapper {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .tour-img-wrapper.open {
+          max-height: 220px;
+        }
+      `}</style>
+
+      {/* Heading */}
       <div className="mb-16 px-2 md:px-0">
         <p className="text-red-600 text-sm uppercase tracking-widest font-bold mb-3">
           — Where We Go
@@ -63,74 +91,177 @@ export default function FeaturedTours() {
         </p>
       </div>
 
+      {/* Tours list */}
       <div className="flex flex-col gap-0 border-t border-gray-200">
         {tours.map((tour, i) => (
-          <div
-            key={i}
-            onMouseEnter={() => setActive(i)}
-            onMouseLeave={() => setActive(null)}
-            className={`group flex flex-col md:flex-row items-stretch border-b border-gray-200 transition-all duration-300 cursor-pointer overflow-hidden
-              ${active === i ? "bg-black" : "bg-white"}`}
-          >
-            <div className="flex items-center gap-4 md:gap-10 px-3 md:px-6 py-8 md:w-1/2">
-              <span
-                className={`font-black text-4xl md:text-6xl transition-colors duration-300 leading-none
-                  ${active === i ? "text-red-600" : "text-gray-100"}`}
+          <div key={i}>
+
+            {/* ── MOBILE LAYOUT (≤1050px) ── */}
+            <div
+              className="tour-mobile flex-col border-b border-gray-200 cursor-pointer overflow-hidden"
+              onClick={() => setActive(active === i ? null : i)}
+            >
+              {/* Header row */}
+              <div
+                className={`tour-mobile-header flex items-center gap-4 px-3 py-6 ${
+                  active === i ? "bg-black" : "bg-white"
+                }`}
               >
-                {tour.id}
-              </span>
-              <div>
-                <div className="flex items-center gap-3 mb-1">
+                <span
+                  className={`font-black text-4xl leading-none transition-colors duration-300 ${
+                    active === i ? "text-red-600" : "text-gray-100"
+                  }`}
+                >
+                  {tour.id}
+                </span>
+                <div className="flex-1">
                   <h3
-                    className={`font-black text-xl md:text-3xl tracking-tight transition-colors duration-300
-                      ${active === i ? "text-white" : "text-black"}`}
+                    className={`font-black text-xl tracking-tight transition-colors duration-300 ${
+                      active === i ? "text-white" : "text-black"
+                    }`}
                   >
                     {tour.title}
                   </h3>
-                  <span className="text-xs bg-red-600 text-white px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide hidden md:inline">
-                    {tour.tag}
-                  </span>
+                  <p
+                    className={`text-xs uppercase tracking-widest font-semibold transition-colors duration-300 ${
+                      active === i ? "text-red-400" : "text-gray-400"
+                    }`}
+                  >
+                    {tour.subtitle}
+                  </p>
                 </div>
-                <p
-                  className={`text-xs uppercase tracking-widest font-semibold transition-colors duration-300
-                    ${active === i ? "text-red-400" : "text-gray-400"}`}
+                {/* Arrow indicator */}
+                <span
+                  className={`text-xl font-black transition-all duration-300 ${
+                    active === i ? "text-red-500 rotate-90" : "text-gray-300 rotate-0"
+                  }`}
                 >
-                  {tour.subtitle}
-                </p>
+                  →
+                </span>
+              </div>
+
+              {/* Smooth expand: description */}
+              <div className={`tour-expand-content ${active === i ? "open" : ""}`}>
+                <div className="tour-expand-inner">
+                  <div className={`transition-colors duration-300 px-4 pt-4 pb-3 ${active === i ? "bg-black" : "bg-white"}`}>
+                    <p
+                      className={`text-sm leading-relaxed transition-colors duration-300 ${
+                        active === i ? "text-gray-300" : "text-gray-500"
+                      }`}
+                    >
+                      {tour.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Smooth expand: image */}
+              <div className={`tour-img-wrapper ${active === i ? "open" : ""}`}>
+                <div
+                  className={`relative w-full transition-colors duration-300 ${active === i ? "bg-black" : "bg-white"}`}
+                  style={{ height: "220px" }}
+                >
+                  <Image
+                    src={tour.img}
+                    alt={tour.title}
+                    fill
+                    className={`object-cover transition-all duration-700 ${
+                      active === i ? "scale-105 opacity-100" : "scale-100 opacity-60"
+                    }`}
+                  />
+                  <div
+                    className={`absolute inset-0 transition-all duration-500 ${
+                      active === i ? "bg-black/10" : "bg-black/40"
+                    }`}
+                  />
+                </div>
               </div>
             </div>
 
+            {/* ── DESKTOP LAYOUT (>1050px) ── */}
             <div
-              className={`overflow-hidden transition-all duration-500 md:w-1/3 flex items-center px-3 md:px-6
-                ${active === i ? "max-h-40 opacity-100 py-4" : "max-h-0 md:max-h-full opacity-0 md:opacity-100 py-0 md:py-8"}`}
+              onMouseEnter={() => setActive(i)}
+              onMouseLeave={() => setActive(null)}
+              className={`tour-desktop flex-row items-stretch border-b border-gray-200 transition-all duration-300 cursor-pointer overflow-hidden ${
+                active === i ? "bg-black" : "bg-white"
+              }`}
             >
-              <p className={`text-sm leading-relaxed transition-colors duration-300
-                ${active === i ? "text-gray-300" : "text-gray-500"}`}>
-                {tour.description}
-              </p>
-            </div>
+              {/* Number + title */}
+              <div className="flex items-center gap-10 px-6 py-8 w-1/2">
+                <span
+                  className={`font-black text-6xl transition-colors duration-300 leading-none ${
+                    active === i ? "text-red-600" : "text-gray-100"
+                  }`}
+                >
+                  {tour.id}
+                </span>
+                <div>
+                  <div className="flex items-center gap-3 mb-1">
+                    <h3
+                      className={`font-black text-3xl tracking-tight transition-colors duration-300 ${
+                        active === i ? "text-white" : "text-black"
+                      }`}
+                    >
+                      {tour.title}
+                    </h3>
+                    <span className="text-xs bg-red-600 text-white px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide">
+                      {tour.tag}
+                    </span>
+                  </div>
+                  <p
+                    className={`text-xs uppercase tracking-widest font-semibold transition-colors duration-300 ${
+                      active === i ? "text-red-400" : "text-gray-400"
+                    }`}
+                  >
+                    {tour.subtitle}
+                  </p>
+                </div>
+              </div>
 
-            <div
-              className={`relative flex-shrink-0 md:w-48 transition-all duration-500 overflow-hidden
-                ${active === i ? "h-40 md:h-auto opacity-100" : "h-0 md:h-auto opacity-60"}`}
-            >
-              <Image
-                src={tour.img}
-                alt={tour.title}
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300" />
-            </div>
-
-            <div className="hidden md:flex items-center px-6">
-              <span
-                className={`text-2xl font-black transition-all duration-300
-                  ${active === i ? "text-red-500 translate-x-2" : "text-gray-200 translate-x-0"}`}
+              {/* Description */}
+              <div
+                className={`overflow-hidden transition-all duration-500 w-1/3 flex items-center px-6 ${
+                  active === i ? "max-h-40 opacity-100 py-4" : "max-h-full opacity-100 py-8"
+                }`}
               >
-                →
-              </span>
+                <p
+                  className={`text-sm leading-relaxed transition-colors duration-300 ${
+                    active === i ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  {tour.description}
+                </p>
+              </div>
+
+              {/* Image thumbnail */}
+              <div className="relative flex-shrink-0 w-48 overflow-hidden">
+                <Image
+                  src={tour.img}
+                  alt={tour.title}
+                  fill
+                  className={`object-cover transition-all duration-700 ${
+                    active === i ? "scale-110 opacity-100" : "opacity-60"
+                  }`}
+                />
+                <div
+                  className={`absolute inset-0 transition-colors duration-300 ${
+                    active === i ? "bg-black/10" : "bg-black/30"
+                  }`}
+                />
+              </div>
+
+              {/* Arrow */}
+              <div className="flex items-center px-6">
+                <span
+                  className={`text-2xl font-black transition-all duration-300 ${
+                    active === i ? "text-red-500 translate-x-2" : "text-gray-200 translate-x-0"
+                  }`}
+                >
+                  →
+                </span>
+              </div>
             </div>
+
           </div>
         ))}
       </div>
