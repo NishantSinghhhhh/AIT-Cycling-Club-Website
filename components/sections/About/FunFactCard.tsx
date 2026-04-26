@@ -22,10 +22,10 @@ export default function FunFactCard({
         />
       </div>
       <div className="p-3 flex flex-col items-center">
-        <h3 className="text-black text-base font-semibold group-hover:text-red-600 transition-colors">
+        <h3 className="text-gray-100 text-base font-semibold group-hover:text-red-600 transition-colors">
           {title}
         </h3>
-        <h4 className="text-black text-sm font-light group-hover:text-red-500 transition-colors">
+        <h4 className="text-gray-100 text-sm font-light group-hover:text-red-500 transition-colors">
           {description}
         </h4>
       </div>

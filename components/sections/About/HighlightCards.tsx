@@ -8,7 +8,7 @@ const highlights: HighlightItem[] = [
   {
     icon: "fa-solid fa-user-tie",
     label: "We Are Professional",
-    color: "text-black",
+    color: "text-gray-100",
   },
   {
     icon: "fa-regular fa-heart",
@@ -18,7 +18,7 @@ const highlights: HighlightItem[] = [
   {
     icon: "fa-solid fa-person-biking",
     label: "We have 80+ Cycles",
-    color: "text-black",
+    color: "text-gray-100",
   },
 ];
 
