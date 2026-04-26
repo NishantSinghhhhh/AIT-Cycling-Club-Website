@@ -36,8 +36,7 @@ export default function Testimonial() {
   const t = testimonials[current];
 
   return (
-    <section className="w-full bg-black py-24 px-6 md:px-16 overflow-hidden relative">
-      {/* Big background text */}
+    <section className="w-full bg-black py-24 px-2 md:px-16 overflow-hidden relative">
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-white/[0.03] leading-none select-none pointer-events-none whitespace-nowrap"
         style={{ fontSize: "clamp(8rem, 20vw, 18rem)" }}
@@ -45,8 +44,7 @@ export default function Testimonial() {
         RIDERS
       </div>
 
-      {/* Heading */}
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4 relative z-10">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4 relative z-10 px-2 md:px-0">
         <div>
           <p className="text-red-600 text-sm uppercase tracking-widest font-bold mb-3">
             — Community Voices
@@ -61,7 +59,6 @@ export default function Testimonial() {
           </h2>
         </div>
 
-        {/* Nav buttons */}
         <div className="flex gap-3 md:mb-4">
           <button
             onClick={prev}
@@ -78,9 +75,7 @@ export default function Testimonial() {
         </div>
       </div>
 
-      {/* Testimonial card */}
-      <div className="relative z-10 border border-gray-800 p-8 md:p-14 max-w-4xl">
-        {/* Quote mark */}
+      <div className="relative z-10 border border-gray-800 p-5 md:p-14 max-w-4xl mx-2 md:mx-0">
         <div className="text-red-600 font-black leading-none mb-8" style={{ fontSize: "6rem" }}>
           "
         </div>
@@ -91,7 +86,6 @@ export default function Testimonial() {
         </p>
 
         <div className="flex items-center gap-5">
-          {/* Avatar */}
           <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-red-600">
             <div
               className="absolute inset-0 bg-cover bg-center"
@@ -103,7 +97,6 @@ export default function Testimonial() {
             <p className="text-gray-500 text-sm uppercase tracking-widest">{t.role}</p>
           </div>
 
-          {/* Dots */}
           <div className="ml-auto flex gap-2">
             {testimonials.map((_, i) => (
               <button

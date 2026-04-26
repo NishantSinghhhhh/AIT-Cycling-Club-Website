@@ -45,9 +45,8 @@ export default function FeaturedTours() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section className="w-full py-24 px-6 md:px-16 bg-white overflow-hidden">
-      {/* Heading */}
-      <div className="mb-16">
+    <section className="w-full py-24 px-2 md:px-16 bg-white overflow-hidden">
+      <div className="mb-16 px-2 md:px-0">
         <p className="text-red-600 text-sm uppercase tracking-widest font-bold mb-3">
           — Where We Go
         </p>
@@ -64,7 +63,6 @@ export default function FeaturedTours() {
         </p>
       </div>
 
-      {/* Tours list */}
       <div className="flex flex-col gap-0 border-t border-gray-200">
         {tours.map((tour, i) => (
           <div
@@ -74,8 +72,7 @@ export default function FeaturedTours() {
             className={`group flex flex-col md:flex-row items-stretch border-b border-gray-200 transition-all duration-300 cursor-pointer overflow-hidden
               ${active === i ? "bg-black" : "bg-white"}`}
           >
-            {/* Number + title */}
-            <div className="flex items-center gap-6 md:gap-10 px-6 py-8 md:w-1/2">
+            <div className="flex items-center gap-4 md:gap-10 px-3 md:px-6 py-8 md:w-1/2">
               <span
                 className={`font-black text-4xl md:text-6xl transition-colors duration-300 leading-none
                   ${active === i ? "text-red-600" : "text-gray-100"}`}
@@ -103,9 +100,8 @@ export default function FeaturedTours() {
               </div>
             </div>
 
-            {/* Description — expands on hover */}
             <div
-              className={`overflow-hidden transition-all duration-500 md:w-1/3 flex items-center px-6
+              className={`overflow-hidden transition-all duration-500 md:w-1/3 flex items-center px-3 md:px-6
                 ${active === i ? "max-h-40 opacity-100 py-4" : "max-h-0 md:max-h-full opacity-0 md:opacity-100 py-0 md:py-8"}`}
             >
               <p className={`text-sm leading-relaxed transition-colors duration-300
@@ -114,7 +110,6 @@ export default function FeaturedTours() {
               </p>
             </div>
 
-            {/* Image thumbnail */}
             <div
               className={`relative flex-shrink-0 md:w-48 transition-all duration-500 overflow-hidden
                 ${active === i ? "h-40 md:h-auto opacity-100" : "h-0 md:h-auto opacity-60"}`}
@@ -128,7 +123,6 @@ export default function FeaturedTours() {
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300" />
             </div>
 
-            {/* Arrow */}
             <div className="hidden md:flex items-center px-6">
               <span
                 className={`text-2xl font-black transition-all duration-300

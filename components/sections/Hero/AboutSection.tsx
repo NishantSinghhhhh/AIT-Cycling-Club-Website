@@ -24,9 +24,8 @@ export default function AboutSection() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="w-full py-24 px-6 md:px-16 bg-white overflow-hidden">
-      {/* Section heading */}
-      <div className="flex items-end gap-6 mb-16">
+    <section className="w-full py-24 px-2 md:px-16 bg-white overflow-hidden">
+      <div className="flex items-end gap-6 mb-16 px-2 md:px-0">
         <h2
           className="font-black leading-none tracking-tighter text-black"
           style={{ fontSize: "clamp(4rem, 10vw, 9rem)" }}
@@ -41,8 +40,7 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* Main content */}
-      <div className="flex flex-col lg:flex-row gap-12 items-start">
+      <div className="flex flex-col lg:flex-row gap-12 items-start px-2 md:px-0">
         {/* Left — image + overlay text */}
         <div className="relative w-full lg:w-[45%] group cursor-pointer flex-shrink-0">
           <div className="relative overflow-hidden" style={{ height: "420px" }}>
@@ -52,9 +50,7 @@ export default function AboutSection() {
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            {/* Red accent bar */}
             <div className="absolute left-0 top-0 w-1.5 h-full bg-red-600 z-10" />
-            {/* Overlay */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-500 z-20 flex items-center justify-center">
               <p className="text-white text-base leading-relaxed px-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 font-light">
                 AIT Cycling Club was born from a shared love of the open road and the freedom
@@ -64,7 +60,6 @@ export default function AboutSection() {
               </p>
             </div>
           </div>
-          {/* Bottom label */}
           <div className="mt-4 flex items-center gap-3">
             <div className="w-8 h-0.5 bg-red-600" />
             <span className="text-xs uppercase tracking-widest text-gray-400 font-semibold">
@@ -89,18 +84,14 @@ export default function AboutSection() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              {/* Always-visible dark gradient at bottom */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-              {/* Title always visible */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 z-10">
                 <div
                   className={`w-6 h-0.5 bg-red-500 mb-2 transition-all duration-300 ${
                     hovered === i ? "w-12" : "w-6"
                   }`}
                 />
                 <h3 className="text-white font-bold text-lg tracking-wide">{card.title}</h3>
-                {/* Text slides up on hover */}
                 <p
                   className={`text-gray-300 text-sm leading-relaxed mt-2 transition-all duration-400 overflow-hidden ${
                     hovered === i ? "max-h-24 opacity-100" : "max-h-0 opacity-0"
